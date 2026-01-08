@@ -8,6 +8,7 @@ export const supportedChains: Record<EVM_NETWORK_KEYS, Chain> = {
   [EVM_NETWORK_KEYS.polygon]: polygon,
   [EVM_NETWORK_KEYS.base]: base,
   [EVM_NETWORK_KEYS.bsc]: bsc,
+  [EVM_NETWORK_KEYS.moonriver]: moonriver,
   [EVM_NETWORK_KEYS.moonbeam]: {
     ...moonbeam,
     rpcUrls: {
@@ -17,7 +18,6 @@ export const supportedChains: Record<EVM_NETWORK_KEYS, Chain> = {
       },
     },
   },
-  [EVM_NETWORK_KEYS.moonriver]: moonriver,
 };
 
 export const connectedChains: readonly [Chain, ...Chain[]] = isProd
