@@ -1,14 +1,12 @@
 import React from "react";
-import {
-  Box,
-  Flex,
-  HStack,
-  RadioProps as Props,
-  useRadio,
-} from "@chakra-ui/react";
+import { Box, Flex, HStack, useRadio, UseRadioProps } from "@chakra-ui/react";
 import { CircledNetworkIcon } from "components/common/circled-network-icon";
 
-export const IconRadio = ({ children, ...restProps }: Props) => {
+interface IconRadioProps extends UseRadioProps {
+  children: React.ReactNode;
+}
+
+export const IconRadio = ({ children, ...restProps }: IconRadioProps) => {
   const { getInputProps, getRadioProps } = useRadio(restProps);
 
   const input = getInputProps();

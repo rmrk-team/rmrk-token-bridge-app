@@ -12,7 +12,7 @@ type Props = {
   network: EVM_NETWORK_KEYS | undefined;
   amount: bigint | undefined;
   toAddress: EthereumAddress | undefined;
-  onSuccess?: UseQueryOptions["onSuccess"];
+  onSuccess?: (data: any) => void;
   onError?: (data?: BaseError) => void;
   enabled?: boolean;
 };
@@ -37,7 +37,7 @@ export const useSwapperMinterSwapLegacyRemark = ({
   const {
     data,
     writeContractAsync,
-    isLoading: isLoadingWrite,
+    isPending: isLoadingWrite,
     error,
   } = useWriteContract();
 

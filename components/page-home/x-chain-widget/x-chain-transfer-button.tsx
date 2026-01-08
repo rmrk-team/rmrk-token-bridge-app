@@ -67,7 +67,7 @@ export const XChainTransferButton = ({
       payableAmount: estimateFee,
       enabled: isEnabled,
 
-      onSuccess: (data) => {
+      onSuccess: (data: any) => {
         const txData = data as { transactionHash: Hash };
 
         if (txData) {

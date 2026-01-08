@@ -36,7 +36,7 @@ export const useErc20Approve = ({
   const {
     data,
     writeContractAsync,
-    isLoading: isLoadingWrite,
+    isPending: isLoadingWrite,
     error,
   } = useWriteContract();
 

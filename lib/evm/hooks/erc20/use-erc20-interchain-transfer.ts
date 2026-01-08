@@ -21,7 +21,7 @@ type Props = {
   recipient: EthereumAddress | undefined;
   amount: string | undefined;
   payableAmount: bigint | undefined;
-  onSuccess?: UseQueryOptions["onSuccess"];
+  onSuccess?: (data: any) => void;
   onError?: (data?: BaseError) => void;
   enabled?: boolean;
 };
@@ -63,7 +63,7 @@ export const useErc20InterchainTransfer = ({
   const {
     data,
     writeContractAsync,
-    isLoading: isLoadingWrite,
+    isPending: isLoadingWrite,
     error,
   } = useWriteContract();
 

@@ -10,7 +10,7 @@ import { BaseError } from "@wagmi/core/src/errors/base";
 type Props = {
   network: EVM_NETWORK_KEYS | undefined;
   amount: bigint | undefined;
-  onSuccess?: UseQueryOptions["onSuccess"];
+  onSuccess?: (data: any) => void;
   onError?: (data?: BaseError) => void;
   enabled?: boolean;
 };
@@ -33,7 +33,7 @@ export const useMoonriverMigratorMigrate = ({
   const {
     data,
     writeContractAsync,
-    isLoading: isLoadingWrite,
+    isPending: isLoadingWrite,
     error,
   } = useWriteContract();
 
